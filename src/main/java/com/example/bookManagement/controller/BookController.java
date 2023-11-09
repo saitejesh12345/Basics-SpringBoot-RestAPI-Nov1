@@ -46,6 +46,11 @@ public class BookController {
     public Book findBookById(@PathVariable("id") int id){
         return  data.get(id);
     }
+    @GetMapping("/findAllBooks")
+        public List<Book> getAllBooks(){
+            return data.values().stream().toList();
+        }
+    
 
 
     //if i dont want to update author name we can keeo optional

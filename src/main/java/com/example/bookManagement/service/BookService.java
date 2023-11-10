@@ -4,12 +4,14 @@ import com.example.bookManagement.entity.Book;
 import com.example.bookManagement.exception.BookAlreadyExistException;
 import com.example.bookManagement.exception.BookNotFoundException;
 import com.example.bookManagement.repository.BookRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
-
+@Service
 public class BookService {
-
-    BookRepository bookRepository = new BookRepository();
+    @Autowired
+    BookRepository bookRepository;
     public Boolean addBook(Book book) throws BookAlreadyExistException{
         Optional<Book> bookOpt=bookRepository.getById(book.getBookId()); //bookId alredy Exists
         if(bookOpt.isPresent()){

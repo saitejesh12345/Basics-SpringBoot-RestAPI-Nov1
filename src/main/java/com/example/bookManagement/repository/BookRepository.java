@@ -1,11 +1,13 @@
 package com.example.bookManagement.repository;
 
 import com.example.bookManagement.entity.Book;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
+@Repository
 public class BookRepository {
 
     Map<Integer, Book> data = new HashMap<>(); //temp database

@@ -17,12 +17,14 @@ import java.util.List;
 import java.util.Objects;
 
 @RestController
+@RequestMapping("/BookManagement")
 public class BookController {
   //  map id --> book we can use map for storage Database
 
-//    @Autowired
-//    private BookRepository bookRepository;
-    BookService bookService = new BookService();
+    @Autowired
+    private BookService bookService;
+
+
     @PostMapping("/add-Book")
     public ResponseEntity addBook(@RequestBody Book book){ //json-format
         try {
